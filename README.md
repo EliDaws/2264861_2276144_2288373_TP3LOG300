@@ -149,18 +149,21 @@ On utilise le flux suivant pour toutes les modifications :
    à un membre de l'équipe.
 
 2. **Branches** : on ne travaille jamais directement sur `main`. Pour chaque issue, on crée une
-   branche à partir de `main` :
+   branche à partir de `main` directement dans l'issue sur GitHub (section **Development** →
+   **Create a branch**). GitHub nomme la branche avec le numéro et le titre de l'issue, sous la
+   forme `<numero-issue>-<titre-de-l-issue>`.
+
+   Exemple : `1-subtract-inverse-lordre-des-opérandes`.
+
+   On récupère ensuite la branche localement :
 
    ```bash
-   git checkout main
-   git pull
-   git checkout -b fix/<numero-issue>-<description-courte>
+   git fetch
+   git switch <numero-issue>-<titre-de-l-issue>
    ```
 
-   Exemple : `fix/3-soustraction-inversee`.
-
 3. **Commits** : les messages de commit expliquent ce qui a été changé et pourquoi. On peut faire
-   référence à l'issue avec son numéro (ex. `Corrige l'ordre des opérandes dans subtract (#3)`).
+   référence à l'issue avec son numéro (ex. `fix: corrige l'ordre des opérandes dans subtract (#1)`).
 
 4. **Tests** : avant d'ouvrir une pull request, on relance tous les tests pour vérifier que le
    correctif fonctionne et qu'il ne brise rien d'autre.
