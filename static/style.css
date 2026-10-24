@@ -1,3 +1,6 @@
+/* Feuille de style de la calculatrice (templates/index.html). */
+
+/* Centre la calculatrice au milieu de la page. */
 body {
    font-family: Arial, sans-serif;
    background-color: #f0f0f0;
@@ -8,6 +11,7 @@ body {
    margin: 0;
 }
 
+/* Boîte principale qui contient l'écran et les boutons. */
 .calculator {
    width: 100%;
    max-width: 600px;
@@ -24,6 +28,7 @@ h1 {
    font-size: 36px;
 }
 
+/* Écran où on voit l'expression et le résultat. */
 #display {
    width: 100%;
    height: 80px;
@@ -37,12 +42,14 @@ h1 {
    color: #fff;
 }
 
+/* Grille de 4 colonnes pour avoir le même placement qu'une vraie calculatrice. */
 .buttons {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    gap: 15px;
 }
 
+/* Style commun à tous les boutons. */
 .btn {
    width: 100%;
    padding: 30px;
@@ -59,6 +66,7 @@ h1 {
    background-color: #555;
 }
 
+/* Les opérateurs et "=" sont en orange pour les distinguer des chiffres. */
 .operator {
    background-color: #ff9500;
 }

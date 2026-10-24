@@ -7,11 +7,18 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<!--
+   Page principale de la calculatrice.
+   Flask remplit {{ result }} avec le résultat du calcul (ou un message d'erreur)
+   après l'envoi du formulaire.
+-->
 <div class="calculator">
    <h1>Flask Calculator</h1>
+   <!-- Le formulaire envoie le contenu de l'écran (champ "display") à la route / en POST. -->
    <form method="POST">
       <input type="text" name="display" id="display" value="{{ result }}" readonly>
 
+      <!-- Les boutons ajoutent leur valeur à l'écran. Seul "=" envoie le formulaire. -->
       <div class="buttons">
          <button type="button" class="btn" onclick="appendToDisplay('1')">1</button>
          <button type="button" class="btn" onclick="appendToDisplay('2')">02</button>
@@ -37,11 +44,18 @@
 </div>
 
 <script>
+   /**
+    * Ajoute un chiffre ou un opérateur à la fin de l'écran.
+    * @param {string} value - le caractère à ajouter.
+    */
    function appendToDisplay(value) {
       const display = document.getElementById('display');
       display.value += value;
    }
 
+   /**
+    * Vide l'écran de la calculatrice (bouton C).
+    */
    function clearDisplay() {
       document.getElementById('display').value = '';
    }
