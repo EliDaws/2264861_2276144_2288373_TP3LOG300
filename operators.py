@@ -42,7 +42,7 @@ def multiply(a,b):
     Returns:
         float: le produit a * b.
     """
-    return a ** b
+    return a * b
 
 def divide(a,b):
     """
