@@ -44,12 +44,25 @@
 </div>
 
 <script>
+   // Vrai quand l'écran affiche le résultat (ou l'erreur) renvoyé par le serveur après "=".
+   let showingResult = document.getElementById('display').value !== '';
+
    /**
     * Ajoute un chiffre ou un opérateur à la fin de l'écran.
+    * Si l'écran affiche un résultat, un chiffre commence un nouveau calcul,
+    * alors qu'un opérateur continue le calcul à partir du résultat.
+    * Après une erreur, on repart toujours d'un écran vide.
     * @param {string} value - le caractère à ajouter.
     */
    function appendToDisplay(value) {
       const display = document.getElementById('display');
+      if (showingResult) {
+         const isDigit = /[0-9]/.test(value);
+         if (isDigit || display.value.startsWith('Error')) {
+            display.value = '';
+         }
+         showingResult = false;
+      }
       display.value += value;
    }
 
@@ -58,6 +71,7 @@
     */
    function clearDisplay() {
       document.getElementById('display').value = '';
+      showingResult = false;
    }
 </script>
 </body>
