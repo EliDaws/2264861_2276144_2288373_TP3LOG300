@@ -118,7 +118,7 @@ Avant d'installer le projet, il faut avoir :
 
 ## Tests
 
-Les tests seront dans le dossier `tests/` et utilisent `pytest`.
+Les tests sont dans le dossier `tests/` et utilisent `pytest`.
 
 1. Installer pytest :
 
