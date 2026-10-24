@@ -109,6 +109,8 @@ Avant d'installer le projet, il faut avoir :
 3. Utiliser la calculatrice :
    - cliquer sur les chiffres et sur un opérateur pour construire l'expression (ex. `12+3`) ;
    - cliquer sur `=` pour obtenir le résultat ;
+   - après le résultat, taper un chiffre commence un nouveau calcul, alors qu'un opérateur
+     continue le calcul à partir du résultat (ex. `5.0` puis `+2` donne `5.0+2`) ;
    - cliquer sur `C` pour vider l'écran.
 
 4. Si l'expression n'est pas valide (ex. deux opérateurs ou un opérateur à la fin), un message
