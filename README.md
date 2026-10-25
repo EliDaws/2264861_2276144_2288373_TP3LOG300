@@ -114,7 +114,8 @@ Avant d'installer le projet, il faut avoir :
    - cliquer sur `C` pour vider l'écran.
 
 4. Si l'expression n'est pas valide (ex. deux opérateurs ou un opérateur à la fin), un message
-   `Error: ...` s'affiche dans l'écran.
+   `Error: ...` s'affiche dans l'écran. Cliquer ensuite sur n'importe quel bouton efface le
+   message et commence un nouveau calcul.
 
 5. Pour arrêter le serveur, faire `Ctrl+C` dans le terminal.
 
