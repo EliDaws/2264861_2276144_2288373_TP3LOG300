@@ -37,8 +37,20 @@ python -m pytest tests/test_operators.py::test_subtract_entiers
 
 - Le JavaScript de la page (`appendToDisplay()` et `clearDisplay()`) n'est pas exécuté par les
   tests, puisqu'il faudrait un vrai navigateur. On vérifie seulement que les boutons sont bien
-  présents dans le HTML.
+  présents dans le HTML. Ce comportement est donc vérifié à la main (voir plus bas).
 - Le style CSS n'est pas testé.
+
+## Vérification manuelle
+
+Le comportement de l'écran après `=` (issue #11) est géré par le JavaScript, donc il se vérifie
+dans le navigateur. Lancer `python app.py`, ouvrir <http://127.0.0.1:5000>, puis :
+
+| Étapes                              | Résultat attendu                                   |
+|-------------------------------------|----------------------------------------------------|
+| `2`, `+`, `3`, `=`, puis `4`        | L'écran affiche `4` (nouveau calcul).              |
+| `2`, `+`, `3`, `=`, puis `+`, `2`   | L'écran affiche `5.0+2` (le calcul continue).      |
+| `2`, `+`, `=`, puis `+`             | Le message `Error: ...` est effacé, l'écran affiche `+`. |
+| `2`, `+`, `3`, `=`, puis `C`, `4`   | L'écran affiche `4`.                               |
 
 ## Hypothèses
 
