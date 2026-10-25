@@ -110,7 +110,9 @@ Avant d'installer le projet, il faut avoir :
    - cliquer sur les chiffres et sur un opérateur pour construire l'expression (ex. `12+3`) ;
    - cliquer sur `=` pour obtenir le résultat ;
    - après le résultat, taper un chiffre commence un nouveau calcul, alors qu'un opérateur
-     continue le calcul à partir du résultat (ex. `5.0` puis `+2` donne `5.0+2`) ;
+     continue le calcul à partir du résultat (ex. `5.0` puis `+2` donne `5.0+2`). Comme les
+     nombres négatifs ne sont pas pris en charge, un résultat négatif (ex. `-3.0`) ne peut pas
+     être réutilisé : il faut commencer un nouveau calcul ;
    - cliquer sur `C` pour vider l'écran.
 
 4. Si l'expression n'est pas valide (ex. deux opérateurs ou un opérateur à la fin), un message

@@ -13,6 +13,8 @@ Ce dossier contient les templates HTML (Jinja2) que Flask utilise pour générer
 1. Les boutons de chiffres et d'opérateurs appellent `appendToDisplay()`, qui ajoute le caractère
    à la fin de l'écran. Si l'écran affiche un résultat (après `=`), un chiffre vide d'abord l'écran
    pour commencer un nouveau calcul, alors qu'un opérateur continue le calcul à partir du résultat.
+   Si le résultat est négatif, continuer le calcul donne une erreur, puisque `app.py` ne prend pas
+   en charge les nombres négatifs.
    Après un message `Error: ...`, n'importe quel bouton repart d'un écran vide.
 2. Le bouton `C` appelle `clearDisplay()` pour vider l'écran.
 3. Le bouton `=` envoie le formulaire en POST à la route `/`. Le contenu de l'écran est envoyé dans
